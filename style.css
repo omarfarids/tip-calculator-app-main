@@ -1,0 +1,207 @@
+/* ======================
+==== general styling ====
+========================= */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700");
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --very-dark-grayish-cyan: hsl(186, 14%, 43%);
+  --dark-grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  min-width: 350px;
+  background-color: var(--light-grayish-cyan);
+}
+form input {
+  font-size: 24px;
+}
+input:focus {
+  outline-color: var(--strong-cyan);
+}
+* {
+  font-family: "Space Mono";
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.active {
+  opacity: 1;
+  background-color: var(--strong-cyan);
+}
+button {
+  cursor: pointer;
+}
+/* ==== flex items ==== */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ======================
+==== general styling ====
+========================= */
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+main > img {
+  margin: 2rem 0;
+}
+.calculator {
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+@media (min-width: 750px) {
+  .calculator {
+    display: flex;
+    flex-direction: row;
+  }
+  .calc-input {
+    padding-right: 1.5rem;
+  }
+}
+.calc-bill,
+.calc-tip,
+.calc-people {
+  margin-bottom: 1rem;
+}
+.calc-bill .flex-row {
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+.calc-input label {
+  color: var(--very-dark-cyan);
+  font-weight: 700;
+  margin: 0.5rem 0;
+  opacity: 0.8;
+}
+.calc-input input {
+  border: unset;
+  border-radius: 3px;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  text-align: right;
+  background-color: var(--very-light-grayish-cyan);
+  color: var(--very-dark-cyan);
+  font-weight: 700;
+}
+.calc-input input[id="bill"] {
+  background: var(--very-light-grayish-cyan) url("images/icon-dollar.svg")
+    no-repeat left 0.5rem center;
+}
+.tip-percentage {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  row-gap: 20px;
+  margin: 0.5rem 0;
+}
+.tip-percentage :is(button, input) {
+  width: 47%;
+  height: 3rem;
+  margin: unset;
+  text-align: center;
+  border: unset;
+  border-radius: 3px;
+}
+.calc-people .flex-row {
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+@media (min-width: 750px) {
+  .tip-percentage :is(button, input) {
+    width: 29.8%;
+  }
+  .tip-percentage {
+    gap: 20px;
+    justify-content: unset;
+  }
+  label {
+    display: block;
+  }
+  .calc-input input:not(.tip-percentage input) {
+    width: 100%;
+  }
+}
+.tip-percentage button {
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  font-size: 24px;
+}
+.calc-input input[id="people"] {
+  background: var(--very-light-grayish-cyan) url("images/icon-person.svg")
+    no-repeat left 0.5rem center;
+}
+.calc-output {
+  background-color: var(--very-dark-cyan);
+  padding: inherit;
+  border-radius: inherit;
+  color: var(--white);
+  gap: 3rem;
+}
+.calc-process {
+  gap: 1rem;
+}
+.calc-process > .flex-row {
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.calc-amount {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--strong-cyan);
+}
+@media (min-width: 750px) {
+  .calc-output {
+    width: 70%;
+    padding: 2rem;
+    justify-content: space-between;
+  }
+  .calc-process {
+    gap: 3rem;
+  }
+}
+.calc-output p {
+  font-size: 0.8em;
+  font-weight: 700;
+}
+.calc-output span {
+  display: block;
+  font-size: 0.8em;
+  color: var(--dark-grayish-cyan);
+}
+.reset-btn {
+  background-color: var(--strong-cyan);
+  border: unset;
+  color: var(--very-dark-cyan);
+  font-size: 1.2rem;
+  font-weight: 700;
+  height: 3rem;
+  border-radius: 3px;
+  opacity: 0.3;
+}
+/* ===== JavaScript ===== */
+.error {
+  color: rgb(255, 99, 71);
+}
+button.active {
+  background-color: var(--strong-cyan);
+}
